@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import './CardDetails.css'
 
 const CardDetails = () => {
     let { id } = useParams()
@@ -16,34 +17,36 @@ const CardDetails = () => {
       }, [api])
 
     return (
-        <div>
-          <div>
+      <>
+        <header>
+          <div className="boxHeader">
             <h1>{name}</h1>
-            <img src={image} alt="" />
           </div>
-          <div>
-            <div>
-                <span>Status : </span>
-                {status}
+        </header>
+          <div className="cardDetails">
+            <img className="imgCD" src={image} alt={name} title={name} />
+            <div className="boxTxtCD">
+              <table className="tableTxtCD">
+                <tr>
+                  <th>Gender</th>
+                  <th>Species</th>
+                </tr>
+                <tr>
+                  <td>{gender}</td>
+                  <td>{species}</td>
+                </tr>
+                <tr>
+                  <th>Origin</th>
+                  <th>Location</th>
+                </tr>
+                <tr>
+                  <td>{origin?.name}</td>
+                  <td>{location?.name}</td>
+                </tr>
+              </table>
             </div>
-            <div>
-                <span>Gender : </span>
-                {gender}
-            </div>
-            <div>
-                <span>Location: </span>
-                {location?.name}
-            </div>
-            <div>
-                <span>Origin: </span>
-                {origin?.name}
-            </div>
-            <div>
-                <span>Species: </span>
-                {species}
-            </div>
-            </div>
-        </div>
+          </div>
+        </>
     )
 }
 export default CardDetails

@@ -1,0 +1,22 @@
+form {
+    display: inline-block;
+    margin: auto;
+}
+#iptSearch {
+    background-color: #fff;
+    text-align: left;
+}
+.Mui-focused:after {
+    border-bottom-width: 4px;
+    border-bottom-color: #202328;
+}
+#iptSearch::placeholder {
+    color: #000;
+}
+#btnSearch {
+    background-color: #202328;
+    cursor: pointer;
+}
+#btnSearch:hover {
+    background: #373a3f;
+}

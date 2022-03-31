@@ -1,0 +1,26 @@
+.Pagination {
+    display: inline-block;
+    margin: 40px 0px;
+}
+.Pagination li {
+    list-style-type: none;
+    float: left;
+    color: #fff;
+    background-color: #383a3e;
+    padding: 5px;
+    border-radius: 8px;
+    margin-right: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.Pagination li:hover {
+    opacity: 0.7;
+}
+
+.Pagination li:first-child {
+    padding: 5px 15px;
+}
+.Pagination li:last-child {
+    padding: 5px 15px;
+}

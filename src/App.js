@@ -6,8 +6,6 @@ import Container from '@mui/material/Container'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import React, { useEffect, useState } from 'react'
-import Context from './Context'
-
 
 
 function App() {
@@ -44,10 +42,12 @@ const Home = () => {
   return (
     <>
       <header>
-        <h1>Characters</h1>
-        <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+        <div className="boxHeader">
+          <h1>Rick and Morty - Characters</h1>
+          <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+        </div>
       </header>
-      <Container maxWidth="lg">
+      <Container id="container" maxWidth="lg">
             <Card page="/" results={results} />
                 <Pagination
                   info={info}

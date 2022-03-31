@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import Avatar from '@mui/material/Avatar'
 import Badge from '@mui/material/Badge'
 import Box from '@mui/material/Box'
 import './Card.css'
@@ -10,13 +9,6 @@ const Card = ({ page, results }) => {
     if (results) {
         display = results.map((x) => {
             let { id, image, name, status, location } = x
-            if(status === "Dead"){
-                let classStatus = 'statusPDead'
-            } else if(status === "Alive"){
-                let classStatus = 'statusPAlive'
-            } else {
-                let classStatus = 'statusPUnk'
-            }
             return (
                 <Link
                     to={`${page}${id}`}
@@ -25,41 +17,54 @@ const Card = ({ page, results }) => {
                 >   
                     <Box
                         sx={{
-                            width: 300,
-                            height: 450,
-                            backgroundColor: '#fbfbfb',
-                            border: '1px solid #fbfbfb',
+                            backgroundColor: '#383a3e',
+                            border: '1px solid #383a3e',
                             '&:hover': {
-                                border: '1px solid #5d92f0',
                                 opacity: [0.9, 0.8, 0.7],
                             },
                         }}
                     >
-                        <Badge badgeContent={status} color="secondary">
-                            <div
-                                key={id}
-                                className=""
-                            >
-                                <div
-                                    className=""
-                                >
-                                    <Avatar
-                                        alt={name}
-                                        src={image}
-                                        sx={{ width: 250, height: 250 }}
-                                    />
-                                        <div className="textCB">
-                                            <p className="statusP {classStatus}">{status}</p>
-                                            <h2 className="nameH2">{name}</h2>
-                                            <div className="infoCB">
-                                                <p className="titP">Last Location:</p>
-                                                <p className="textP">{location.name}</p>
-                                            </div>
-                                        </div>
+                        <div
+                            key={id}
+                            className=""
+                        >
+                            <img src={image} alt={name} title={name} className="imgCB"/>
+                            <div className="textCB">
+                                <h2 className="nameH2">{name}</h2>
+                                <div className="infoCB">
+                                    <p className="titP">Last Location:</p>
+                                    <p className="textP">{location.name}</p>
                                 </div>
                             </div>
-                        </Badge>
+                        </div>
                     </Box>
+                    {(() => {
+                        if (status === "Dead") {
+                        return (
+                            <div
+                            className={`badgeCB statusPDead position-absolute badge bg-danger`}
+                            >
+                            {status}
+                            </div>
+                        );
+                        } else if (status === "Alive") {
+                        return (
+                            <div
+                            className={`badgeCB statusPAlive position-absolute badge bg-success`}
+                            >
+                            {status}
+                            </div>
+                        );
+                        } else {
+                        return (
+                            <div
+                            className={`badgeCB statusPUnk position-absolute badge bg-secondary`}
+                            >
+                            {status}
+                            </div>
+                        );
+                        }
+                    })()}
                 </Link>
 
             )
