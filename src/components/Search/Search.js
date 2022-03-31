@@ -1,4 +1,7 @@
 import React from "react";
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
+
 
 const Search = ({ setSearch, updatePageNumber }) => {
   let searchBtn = (e) => {
@@ -6,19 +9,23 @@ const Search = ({ setSearch, updatePageNumber }) => {
   }
   return (
     <form>
-        <input
+        <TextField 
             onChange={(e) => {
                 updatePageNumber(1);
                 setSearch(e.target.value);
             }}
             placeholder="Search for characters"
             type="text"
+            id="filled-basic" 
+            label="Filled" 
+            variant="filled" 
         />
-        <button
-            onClick={searchBtn}
+        <Button 
+          onClick={searchBtn}
+          variant="contained"
         >
-            Search
-        </button>
+          Search
+        </Button>
     </form>
   );
 }

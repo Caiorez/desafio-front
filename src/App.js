@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
-
 import Search from "./components/Search/Search"
 import Card from "./components/Card/Card"
 import Pagination from "./components/Pagination/Pagination"
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import CardDetails from "./components/Card/CardDetails"
+import Container from '@mui/material/Container'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import React, { useEffect, useState } from 'react'
+
 
 
 
@@ -41,25 +42,20 @@ const Home = () => {
   }, [api])
 
   return (
-    <div>
-      <h1>Characters</h1>
-      <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
-      <div>
-        <div >
-          Filter component will be placed here
-          <div>
-            <div>
-              <Card page="/" results={results} />
-              <Pagination
-                info={info}
-                pageNumber={pageNumber}
-                updatePageNumber={updatePageNumber}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <header>
+        <h1>Characters</h1>
+        <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+      </header>
+      <Container maxWidth="lg">
+            <Card page="/" results={results} />
+                <Pagination
+                  info={info}
+                  pageNumber={pageNumber}
+                  updatePageNumber={updatePageNumber}
+                />
+      </Container>
+    </>
   )
 }
 
