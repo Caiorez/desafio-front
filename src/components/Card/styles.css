@@ -11,6 +11,7 @@
     text-align: center;
     background-color: #383a3e;
     position: relative;
+    width: 100%;
 }
 .card-box-image-character {
     width: 100%;
