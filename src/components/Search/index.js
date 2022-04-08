@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField'
 import Stack from '@mui/material/Stack'
 import './styles.css'
 import { useCharacterContext } from "../../context/character";
+import { auto } from "@popperjs/core";
 
 const Search = ({ }) => {
   
@@ -26,7 +27,8 @@ const Search = ({ }) => {
         <TextField 
             onChange={handleChangeSearch}
             sx={{
-              width: '100%',
+              width: '50%',
+              margin: auto,
               '& > :not(style)': { m: 0, width: '40ch' },
               '& div': { width: '100%'},
               '& input': { width: '100%'},
