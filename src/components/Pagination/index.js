@@ -16,6 +16,7 @@ const Pagination = ({ info }) => {
             pageCount={info?.pages}
             onPageChange={pageChange}
             className="pagination-content"
+            marginPagesDisplayed="1"
         //.... other props here
         />
     )
