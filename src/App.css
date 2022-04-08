@@ -8,10 +8,7 @@ header {
     background-position: center;
     background-repeat: no-repeat;
 }
-#container > p {
-    display: inline-block;
-}
-.boxHeader {
+.header-title-box {
     background-color: rgba(32, 35, 40, 0.5);
     padding: 20px
 }

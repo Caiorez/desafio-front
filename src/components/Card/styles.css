@@ -1,5 +1,5 @@
 * {box-sizing: border-box;}
-.cardBox {
+.card-box {
     display: block;
     float: left;
     border-radius: 8px;
@@ -12,35 +12,26 @@
     background-color: #383a3e;
     position: relative;
     width: 21%;
-    min-height: 415px;
+    min-height: 500px;
 }
-.imgCB {
+.card-box-image-character {
     width: 100%;
     height: auto;
 }
-.textCB {
+.card-box-text-content {
     padding: 15px;
     position: relative;
 }
-.statusP {
-    position: absolute;
-    color: #fff;
-    width: 100%;
-    padding: 10px 0px;
-    text-align: center;
-    top: 0;
-    left: 0;
-}
-.statusPAlive {
+.card-box-badge-status-alive {
     background-color: rgb(13 159 13);
 }
-.statusPDead {
+.card-box-badge-status-dead {
     background-color: rgb(151, 10, 10);
 }
-.statusPUnk {
+.card-box-badge-status-unknown {
     background-color: rgb(104, 97, 97);
 }
-.badgeCB {
+.card-box-badge-status {
     color: #fff;
     font-weight: 700;
     font-size: 16px;
@@ -51,17 +42,20 @@
     right: 5px;
     position: absolute;
 }
-.nameH2 {
+.card-box-name-character {
     color: #fff;
     margin: 10px 0px 5px;
 }
-.infoCB {}
-.titP {
+.card-box-title-info {
     color: #fff;
     font-weight: 700;
     margin-bottom: 0px;
 }
-.textP {
+.card-box-text-info {
     color: #fff;
     margin: 5px 0px;
+}
+.no-character-found {
+    color: #fff;
+    font-size: 20px;
 }

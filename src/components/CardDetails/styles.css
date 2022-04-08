@@ -1,0 +1,77 @@
+.card-details {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+}
+.card-detail-box-text {
+    border: #fff;
+}
+.card-detail-info-table {
+    border-collapse: collapse;
+    border: 1px solid #cecece;
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+}
+.card-detail-info-table tr {
+    border-collapse: collapse;
+    border: 1px solid #cecece;
+    width: 100%;
+}
+.card-detail-info-table th {
+    border-collapse: collapse;
+    border: 1px solid #cecece;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: 700;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.card-detail-info-table td {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #cecece;
+    color: #fff;
+    padding: 10px 15px
+}
+.card-details-button-back {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #000;
+    background-color: #cecece;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+.card-details-button-back:hover {
+    opacity: 0.7;
+}
+#container {
+    position: relative;
+}
+
+.card-box-badge-status-alive {
+    background-color: rgb(13 159 13);
+}
+.card-box-badge-status-dead {
+    background-color: rgb(151, 10, 10);
+}
+.card-box-badge-status-unknown {
+    background-color: rgb(104, 97, 97);
+}
+.card-box-badge-status {
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 13px;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+}

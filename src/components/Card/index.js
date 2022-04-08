@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
-import Badge from '@mui/material/Badge'
 import Box from '@mui/material/Box'
-import './Card.css'
+import './styles.css'
 
 const Card = ({ page, results }) => {
     let display
@@ -11,9 +10,9 @@ const Card = ({ page, results }) => {
             let { id, image, name, status, location } = x
             return (
                 <Link
-                    to={`${page}${id}`}
+                    to={"/character"+`${page}${id}`}
                     key={id}
-                    className="cardBox"
+                    className="card-box"
                 >   
                     <Box
                         sx={{
@@ -26,14 +25,13 @@ const Card = ({ page, results }) => {
                     >
                         <div
                             key={id}
-                            className=""
                         >
-                            <img src={image} alt={name} title={name} className="imgCB"/>
-                            <div className="textCB">
-                                <h2 className="nameH2">{name}</h2>
-                                <div className="infoCB">
-                                    <p className="titP">Last Location:</p>
-                                    <p className="textP">{location.name}</p>
+                            <img src={image} alt={name} title={name} className="card-box-image-character"/>
+                            <div className="card-box-text-content">
+                                <h2 className="card-box-name-character">{name}</h2>
+                                <div className="card-box-information-character">
+                                    <p className="card-box-title-info">Last Location:</p>
+                                    <p className="card-box-text-info">{location.name}</p>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +40,7 @@ const Card = ({ page, results }) => {
                         if (status === "Dead") {
                         return (
                             <div
-                            className={`badgeCB statusPDead position-absolute badge bg-danger`}
+                            className={`card-box-badge-status card-box-badge-status-dead position-absolute badge bg-danger`}
                             >
                             {status}
                             </div>
@@ -50,7 +48,7 @@ const Card = ({ page, results }) => {
                         } else if (status === "Alive") {
                         return (
                             <div
-                            className={`badgeCB statusPAlive position-absolute badge bg-success`}
+                            className={`card-box-badge-status card-box-badge-status-alive position-absolute badge bg-success`}
                             >
                             {status}
                             </div>
@@ -58,7 +56,7 @@ const Card = ({ page, results }) => {
                         } else {
                         return (
                             <div
-                            className={`badgeCB statusPUnk position-absolute badge bg-secondary`}
+                            className={`card-box-badge-status card-box-badge-status-unknown position-absolute badge bg-secondary`}
                             >
                             {status}
                             </div>
@@ -70,12 +68,11 @@ const Card = ({ page, results }) => {
             )
 
         })
-    }
-    else {
-        display = "No characters found."
+    } else {
+        display = "Nenhum personagem encontrado!"
     }
     return (
-        <p>{display}</p>
+        <p className="no-character-found">{display}</p>
     )
 }
 export default Card

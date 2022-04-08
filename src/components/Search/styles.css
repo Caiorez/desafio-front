@@ -2,7 +2,7 @@ form {
     display: inline-block;
     margin: auto;
 }
-#iptSearch {
+#input-search {
     background-color: #fff;
     text-align: left;
 }
@@ -10,13 +10,6 @@ form {
     border-bottom-width: 4px;
     border-bottom-color: #202328;
 }
-#iptSearch::placeholder {
+#input-search::placeholder {
     color: #000;
-}
-#btnSearch {
-    background-color: #202328;
-    cursor: pointer;
-}
-#btnSearch:hover {
-    background: #373a3f;
 }

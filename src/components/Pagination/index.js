@@ -1,10 +1,13 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
-import './Pagination.css'
+import { useCharacterContext } from "../../context/character";
+import './styles.css'
 
-const Pagination = ({ pageNumber, info, updatePageNumber }) => {
+const Pagination = ({ info }) => {
+
+  const { pageNumber, setPageNumber } = useCharacterContext()
     let pageChange = (data) => {
-        updatePageNumber(data.selected + 1);
+        setPageNumber(data.selected + 1);
     }
 
     return (
@@ -12,9 +15,9 @@ const Pagination = ({ pageNumber, info, updatePageNumber }) => {
             forcePage={pageNumber === 1 ? 0 : pageNumber - 1}
             pageCount={info?.pages}
             onPageChange={pageChange}
-            className="Pagination"
+            className="pagination-content"
         //.... other props here
-      />
+        />
     )
 }
 export default Pagination
