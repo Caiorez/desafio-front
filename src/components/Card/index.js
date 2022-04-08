@@ -3,10 +3,9 @@ import Box from '@mui/material/Box'
 import './styles.css'
 
 const Card = ({ page, results }) => {
-    let display
 
-    if (results) {
-        display = results.map((x) => {
+    // if (results) {
+        return results.map((x) => {
             let { id, image, name, status, location } = x
             return (
                 <Link
@@ -64,15 +63,10 @@ const Card = ({ page, results }) => {
                         }
                     })()}
                 </Link>
-
             )
-
         })
-    } else {
-        display = "Nenhum personagem encontrado!"
-    }
-    return (
-        <p className="no-character-found">{display}</p>
-    )
+    // } 
+    
+   
 }
 export default Card

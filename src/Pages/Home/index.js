@@ -11,7 +11,7 @@ import Container from '@mui/material/Container'
 const Home = () => {
 
     const { search, setSearch, pageNumber, setPageNumber, characterList, setCharacterList, loading, setLoading } = useCharacterContext()
-    let { info, results } = characterList
+    let { info, results, error = null } = characterList
   
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
   
@@ -27,29 +27,24 @@ const Home = () => {
     return (
       <>
         <Header headerTitle="Rick and Morty - Characters" headerComponent={<Search setSearch={setSearch} updatePageNumber={setPageNumber} />}/>
-
-        {(() => {
-            if (loading) {
-              return (
+        <Container id="container" maxWidth="lg">
+          {loading && <p className="no-character-found">Carregando informações de personagens.</p>}
+          {!loading && 
+            <>
+              {results &&
                 <>
-                  <Container id="container" maxWidth="lg">
-                    <p className="no-character-found">Carregando informações de personagens.</p>
-                  </Container>
-                </>
-              )
-            } else {
-              return (
-                <Container id="container" maxWidth="lg">
-                  <Card page="/" results={results} />
+                  <Card page="/" results={results} error={error} />
                   <Pagination
                     info={info}
                     pageNumber={pageNumber}
                     updatePageNumber={setPageNumber}
                   />
-                </Container>
-              )
-            }
-        })()}
+                </>
+              }
+              {(error || !results) && <p className="no-character-found">Nenhum personagem encontrado!</p>}
+            </>
+          }
+        </Container>
       </>
     )
   }
