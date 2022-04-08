@@ -13,3 +13,6 @@ form {
 #input-search::placeholder {
     color: #000;
 }
+.input-search {
+    width: 100%;
+}

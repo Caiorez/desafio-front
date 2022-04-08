@@ -4,7 +4,6 @@ import Stack from '@mui/material/Stack'
 import './styles.css'
 import { useCharacterContext } from "../../context/character";
 
-
 const Search = ({ }) => {
   
   const { search, setSearch } = useCharacterContext()
@@ -27,7 +26,11 @@ const Search = ({ }) => {
         <TextField 
             onChange={handleChangeSearch}
             sx={{
+              width: '100%',
               '& > :not(style)': { m: 0, width: '40ch' },
+              '& div': { width: '100%'},
+              '& input': { width: '100%'},
+              '& label': {textAlign: 'left'}
             }}
             type="text"
             id="input-search" 

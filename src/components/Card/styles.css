@@ -11,8 +11,6 @@
     text-align: center;
     background-color: #383a3e;
     position: relative;
-    width: 21%;
-    min-height: 500px;
 }
 .card-box-image-character {
     width: 100%;
@@ -45,15 +43,18 @@
 .card-box-name-character {
     color: #fff;
     margin: 10px 0px 5px;
+    font-size: 1.5em;
 }
 .card-box-title-info {
     color: #fff;
     font-weight: 700;
     margin-bottom: 0px;
+    font-size: 1.2em;
 }
 .card-box-text-info {
     color: #fff;
     margin: 5px 0px;
+    font-size: 1em;
 }
 .no-character-found {
     color: #fff;

@@ -7,6 +7,7 @@ import Search from "../../components/Search"
 import { useCharacterContext } from '../../context/character'
 
 import Container from '@mui/material/Container'
+import Grid from '@mui/material/Grid';
 
 const Home = () => {
 
@@ -33,7 +34,9 @@ const Home = () => {
             <>
               {results &&
                 <>
-                  <Card page="/" results={results} error={error} />
+                  <Grid container spacing={{ xs: 1, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }}>
+                    <Card page="/" results={results} error={error} />
+                  </Grid>
                   <Pagination
                     info={info}
                     pageNumber={pageNumber}
